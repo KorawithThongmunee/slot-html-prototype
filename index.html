@@ -7,8 +7,14 @@
     <title>Slot</title>
   </head>
   <body>
+    <div class="container LoadContainer">
+      <img width="100%" src="img/logo.gif" alt="@logo" />
+    </div>
     <div class="container">
-      <h2 data-getdisplay>WIN and WIN!</h2>
+      <div class="flex">
+        <h2 data-getdisplay>WIN and WIN!</h2>
+        <h2><span data-coindisplay>1000</span> THB</h2>
+      </div>
       <div class="grid">
         <div class="div div2" style="transition-delay: 10ms; scale: 1"></div>
         <div class="div div1" style="transition-delay: 10ms; scale: 1"></div>
@@ -28,9 +34,10 @@
       </div>
     </div>
     <div class="buttons">
+      <button data-turbo></button>
       <button data-spinbtn></button>
     </div>
   </body>
   <script src="int.min.js"></script>
-  <script src="app.min.js"></script>
+  <script src="app.js"></script>
 </html>

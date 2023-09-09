@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap");
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lobster", cursive;
+  font-family: "Roboto", sans-serif;
 }
 .container {
   width: 100%;
@@ -11,6 +13,19 @@ body {
   left: 0;
   margin: 0;
   z-index: -1;
+  background-image: url("img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+.container.LoadContainer {
+  transition: all 400ms ease;
+  visibility: visible;
+  opacity: 1;
+  z-index: 999;
+  background-color: black;
+  background-image: none;
 }
 .grid {
   display: grid;
@@ -36,10 +51,16 @@ body {
   background-color: blueviolet;
 }
 .buttons {
+  display: flex;
+  gap: 12px;
   position: fixed;
-  bottom: 12%;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  place-content: center;
+  bottom: 10%;
+}
+.flex {
+  display: flex;
+  gap: 12px;
 }
 [data-spinbtn] {
   background-repeat: no-repeat;
@@ -51,11 +72,29 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 50%;
-  background-color: blueviolet;
+  background-color: #291b25;
   animation: ROTATE 1500ms linear infinite;
 }
 [data-spinbtn]:disabled {
   animation: ROTATE 400ms linear infinite;
+}
+
+[data-turbo] {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("img/turbo.png");
+  width: 80px;
+  height: 80px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid blue;
+  scale: 1;
+  transition: 200ms ease;
+}
+[data-inuse] {
+  scale: 1.06;
 }
 @keyframes ROTATE {
   0% {
@@ -84,6 +123,9 @@ body {
 }
 [data-num="5"] {
   background-image: url("img/5.png");
+}
+[data-num="6"] {
+  background-image: url("img/6.png");
 }
 
 @media screen and (max-width: 800px) {
